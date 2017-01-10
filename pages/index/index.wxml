@@ -1,0 +1,23 @@
+<view wx:if="{{firstLoad}}">
+  <image src="../../images/first_loading.jpg" style="width:200px;height:100px;margin:0 auto;display:block;" />
+</view>
+<navigator wx:for="{{movies}}" class="flex-wrp"  url="/pages/movieDetail/movieDetail?id={{item.id}}&title={{item.title}}" open-type="navigate">
+  <view class="flex-item post">
+    <image src="{{item.images.large}}" class="image-auto" mode="scaleToFill"/>
+  </view>
+  <view class="flex-item content">
+    <view class="movie-title">{{item.title}}</view>
+    <view class='font-12 movie-type'>
+      <view wx:for="{{item.genres}}" wx:for-item="genres">{{genres}}/</view>
+    </view>
+    <view class='font-12 font-afafaf movie-cast'>
+      <view wx:for="{{item.casts}}" wx:for-item="casts" class="inline">{{casts.name}}/</view>
+    </view>
+    <view class="movie-point">评分：{{item.rating.average}}</view>
+  </view>
+</navigator>
+<loading hidden="{{loadingHidden}}" bindchange="loadingChange">
+  加载中...
+</loading>
+<view style="height:20px;background-color:#efefef" wx:if="{{!firstLoad}}"></view>
+

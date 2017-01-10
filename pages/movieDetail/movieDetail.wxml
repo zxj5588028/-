@@ -1,0 +1,43 @@
+<view class="header-background" style="background: url('{{movie.images.large}}') no-repeat center;background-size: 100% 100%;"></view>
+<view class="header">
+  <image src="{{movie.images.large}}" mode="scaleToFill" class="header-image"/>
+  <view class="header-content">
+    <view class="movie-title">
+      <text>{{movie.title}}</text>
+    </view>
+    <view class="movie-rate font-16">
+      <text class="rate">{{movie.rating.average}}分</text>
+      <text class="font-12">({{movie.ratings_count}}人评分)</text>
+    </view>
+    <view class="font-12 movie-genres">
+      <text wx:for="{{movie.genres}}">{{item}}/</text>
+      <text wx:for="{{movie.countries}}" wx:for-item="country">|{{country}}</text>
+    </view>
+    <view class="font-12 movie-year">
+      <text>{{movie.year}}年</text>
+    </view>
+  </view>
+</view>
+<!-- 描述 -->
+<view class="movie-summary font-12">
+  {{movie.summary}}
+</view>
+
+<view style="height:20px;background-color:#efefef"></view>
+
+<view class="main-cast">
+  <view class="main-cast-title">主创</view>
+  <scroll-view scroll-x="true">
+    <view wx:for="{{movie.casts}}" wx:for-item="cast" class="inline cast">
+      <image src="{{cast.avatars.small}}" class="cast-image"></image>
+      <view class="font-12 inline cast-text">{{cast.name}}</view>
+    </view>
+  </scroll-view>
+</view>
+
+<view style="height:40px;background-color:#efefef;margin-bottom:60px;"></view>
+
+<!-- 立即购买 -->
+<view style="" class="buy">
+  <button size="default" type="primary" class="buy-button" bindtap="buy">立即购买</button>
+</view>

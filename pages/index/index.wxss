@@ -1,0 +1,32 @@
+.post {
+  width: 20%;
+}
+.content {
+  flex-direction: column;
+  width: 80%;
+  padding: 2%;
+  position: relative;
+}
+.movie-title {
+  margin-bottom:20px;
+}
+.movie-type {
+  margin-bottom: 10px;
+  display: flex;
+}
+.movie-cast {
+  margin-bottom: 5px;
+}
+.movie-point {
+  position:absolute;
+  top:2%;
+  right:2%;
+  color:red;
+  font-size:14px;
+}
+.flex-wrp::after {
+  content:'',
+  height: 1px;
+  width: 100%;
+  color: red;
+}

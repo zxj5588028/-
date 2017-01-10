@@ -1,0 +1,86 @@
+.header-background {
+  height: 160px;
+  width:100%;
+  filter: url(blur.svg#blur); /* FireFox, Chrome, Opera */
+  -webkit-filter: blur(40px); /* Chrome, Opera */
+  position: absolute;
+  z-index:-1;
+  overflow:hidden;
+}
+.header {
+  height: 140px;
+  padding: 10px 2%;
+  display: flex;
+  color: white;
+}
+.header-image {
+  width: 30%;
+  height: 100%;
+}
+.header-content {
+  display:inline-block;
+  width:60%;
+  padding-left:4%;
+  vertical-align:center;
+
+}
+.movie-title {
+  margin-top: 10px;
+
+}
+.movie-rate {
+  margin: 20px 0;
+}
+.rate {
+  color: red;
+}
+.movie-genres {
+  margin: 2px 0;
+}
+.movie-year {
+  margin-top: 5px;
+}
+.movie-summary {
+  padding: 10px 2%;
+  line-height: 24px;
+
+}
+.cast {
+  width: 20%;
+  height: 100px;
+  margin-right: 6px;
+}
+.cast-image {
+  width:100%;
+  height:100%;
+}
+.cast-text {
+  box-sizing: border-box;
+  width: 100%;
+  padding: 0 5px;
+  text-align: center;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+.main-cast {
+  padding: 10px 2%;
+}
+.main-cast-title {
+  margin-bottom: 10px;
+}
+
+.buy {
+  padding: 10px 2%;
+  height: 60px;
+  box-sizing: border-box;
+  position:fixed;
+  bottom:0;
+  width:100%;
+  background:#fff;
+}
+
+.buy-button {
+  width: 100%;
+  height: 100%;
+}

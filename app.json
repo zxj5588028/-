@@ -1,0 +1,49 @@
+{
+  "pages": [
+    "pages/index/index",
+    "pages/movieDetail/movieDetail",
+    "pages/moviePre/moviePre",
+    "pages/movieTop/movieTop"
+  ],
+  "window":{
+    "navigationBarBackgroundColor": "black",
+    "navigationBarTextStyle": "white",
+    "backgroundColor": "#eeeeee",
+    "backgroundTextStyle": "light",
+    "enablePullDownRefresh": true
+  },
+  "tabBar": {
+    "color":  "#cdcdcd",
+    "selectedColor": "#d4237a",
+    "backgroundColor": "black",
+    "borderStyle": "white",
+    "list": [
+      {
+        "pagePath": "pages/index/index",
+        "text": "正在热映",
+        "iconPath": "images/index_2.png",
+        "selectedIconPath": "images/index_1.png"
+      },
+      {
+        "pagePath": "pages/moviePre/moviePre",
+        "text": "即将上映",
+        "iconPath": "images/next_2.png",
+        "selectedIconPath": "images/next_1.png"
+      },
+      {
+        "pagePath": "pages/movieTop/movieTop",
+        "text": "top100",
+        "iconPath": "images/famous_2.png",
+        "selectedIconPath": "images/famous_1.png"
+      }
+    ],
+    "position": "bottom"
+  },
+  "networkTimeout": {
+    "request": 10000,
+    "connectSocket": 10000,
+    "uploadFile": 10000,
+    "downloadFile": 10000
+  },
+  "debug": true
+}
