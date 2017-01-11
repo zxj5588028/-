@@ -1,4 +1,5 @@
 const mainUrl = 'http://api.douban.com/v2/movie/';
+//请求资源接口，传入data，success，url，3个参数
 function wxRequest(options) {
   let data = options.data ? options.data : '';
   wx.request({
@@ -18,6 +19,30 @@ function wxRequest(options) {
     }
   });
 }
+//登录
+function wxLogin(that){
+  wx.login({
+    success: function(response){
+      wx.getUserInfo({
+        success: function(res){
+          that.setData({
+            userInfo: res.userInfo
+          });
+          console.log(that.data)
+        }
+      })
+    }
+  })
+}
+//跳转
+function wxNavigateTo(url){console.log(url)
+  wx.navigateTo({
+    url: url
+  });
+}
+
 module.exports = {
-  wxRequest: wxRequest
+  wxRequest: wxRequest,
+  wxLogin: wxLogin,
+  wxNavigateTo: wxNavigateTo
 }

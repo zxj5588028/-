@@ -1,0 +1,7 @@
+<view class="head center">
+  <image src="{{userInfo.avatarUrl}}" class="head-image"/>
+</view>
+<view class="font-16 userInfo center">{{userInfo.nickName}} | {{userInfo.city}}</view>
+<view class="calc">
+  <button size="default" type="primary" bindtap="goCalc">开始计算之旅吧</button>
+</view>

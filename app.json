@@ -1,9 +1,8 @@
 {
   "pages": [
-    "pages/index/index",
-    "pages/movieDetail/movieDetail",
-    "pages/moviePre/moviePre",
-    "pages/movieTop/movieTop"
+    "pages/calcDetail/calcDetail",
+    "pages/calc/calc",
+    "pages/movieDetail/movieDetail"
   ],
   "window":{
     "navigationBarBackgroundColor": "black",
@@ -19,22 +18,16 @@
     "borderStyle": "white",
     "list": [
       {
-        "pagePath": "pages/index/index",
+        "pagePath": "pages/calcDetail/calcDetail",
         "text": "正在热映",
         "iconPath": "images/index_2.png",
         "selectedIconPath": "images/index_1.png"
       },
       {
-        "pagePath": "pages/moviePre/moviePre",
-        "text": "即将上映",
-        "iconPath": "images/next_2.png",
-        "selectedIconPath": "images/next_1.png"
-      },
-      {
-        "pagePath": "pages/movieTop/movieTop",
-        "text": "top100",
-        "iconPath": "images/famous_2.png",
-        "selectedIconPath": "images/famous_1.png"
+        "pagePath": "pages/calc/calc",
+        "text": "计算器",
+        "iconPath": "images/calc_2.png",
+        "selectedIconPath": "images/calc_1.png"
       }
     ],
     "position": "bottom"
