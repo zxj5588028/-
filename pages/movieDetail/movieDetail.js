@@ -1,6 +1,9 @@
 const common = require('../../util/ajaxAPI.js');
 Page({
-  data: {},
+  data: {
+    summaryText: "text-up",
+    arrow: 'down'
+  },
   onLoad: function(query) {
     this.setData({
       movieId: query.id,
@@ -34,5 +37,19 @@ Page({
       }
     }
     wx.showToast(options);
+  },
+  showMore: function(){
+    let arrow, summaryText;
+    if (this.data.arrow === 'down') {
+      arrow = 'up';
+      summaryText = 'text-down'
+    } else {
+      arrow = 'down';
+      summaryText = 'text-up'
+    }
+    this.setData({
+      arrow: arrow,
+      summaryText: summaryText
+    })
   }
 });

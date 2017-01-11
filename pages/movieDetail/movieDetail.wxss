@@ -1,3 +1,6 @@
+page {
+  background-color: #efefef;
+}
 .header-background {
   height: 160px;
   width:100%;
@@ -41,9 +44,8 @@
   margin-top: 5px;
 }
 .movie-summary {
-  padding: 10px 2%;
+  padding: 10px 2% 10px;
   line-height: 24px;
-
 }
 .cast {
   width: 20%;
@@ -65,6 +67,7 @@
 }
 .main-cast {
   padding: 10px 2%;
+  margin: 20px 0 80px;
 }
 .main-cast-title {
   margin-bottom: 10px;
@@ -83,4 +86,21 @@
 .buy-button {
   width: 100%;
   height: 100%;
+}
+.bg-white {
+  background-color: white;
+}
+.up {
+  background: white url(../../images/up.png) no-repeat bottom center;
+}
+.down {
+  background: white url(../../images/down.png) no-repeat bottom center;
+}
+.text-up {
+  height:60px;
+  overflow:hidden;
+  padding:10px 2%;
+}
+.text-down {
+  padding:10px 2%;
 }

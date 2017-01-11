@@ -19,13 +19,14 @@
   </view>
 </view>
 <!-- 描述 -->
-<view class="movie-summary font-12">
-  {{movie.summary}}
+<view class="movie-summary font-12 bg-white">
+  <view class="{{summaryText}}">{{movie.summary}}</view>
+  <view class="{{arrow}}" bindtap="showMore" style="width:40px;height:40px;margin: 0 auto;"></view>
 </view>
 
-<view style="height:20px;background-color:#efefef"></view>
+<!-- <view style="height:20px;background-color:#efefef"></view> -->
 
-<view class="main-cast">
+<view class="main-cast bg-white">
   <view class="main-cast-title">主创</view>
   <scroll-view scroll-x="true">
     <view wx:for="{{movie.casts}}" wx:for-item="cast" class="inline cast">
@@ -35,7 +36,7 @@
   </scroll-view>
 </view>
 
-<view style="height:40px;background-color:#efefef;margin-bottom:60px;"></view>
+<!-- <view style="height:40px;background-color:#efefef;margin-bottom:60px;"></view> -->
 
 <!-- 立即购买 -->
 <view style="" class="buy">
