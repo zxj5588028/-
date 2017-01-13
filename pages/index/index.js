@@ -12,8 +12,11 @@ Page({
     firstLoad: true//首次加载显示
   },
   onLoad: function() {
-    this.requestMovies();
+    common.wxGetNetWork(this.requestMovies);
   },
+  /**
+   * [onReachBottom 滚动到底部，显示加载动画，加载数据]
+   */
   onReachBottom: function() {
     //判断是否加载完毕
     if (this.data.isEnd) {
@@ -24,13 +27,16 @@ Page({
     })
     this.requestMovies();
   },
+  /**
+   * [requestMovies 请求电影资源]
+   * @return {[type]} [description]
+   */
   requestMovies: function(){
     let _that = this;
     let options = {
       url: "in_theaters",
       data: _that.data.requestData,
       success: function(res){
-        console.log('请求成功');
         _that.setData({
           movies: _that.data.movies.concat(res.data.subjects),
           'requestData.start': _that.data.requestData.start + 10,

@@ -1,32 +1,43 @@
+const rpn = require("../../util/rpn.js");
+
 Page({
   data: {
     calcData: '',
-    isCalc: false,
-    temporary: ''
+    isResult: false//calcData是否是计算后的结果，true 是，false 否
   },
-  onLoad: function(){
-    console.log("计算详情");
-  },
-  //点击数字，小数点
+  /**
+   * [clickDigit 点击数字和小数点]
+   * @param  {[object]} e [事件对象]
+   */
   clickDigit: function(e){
-    //没有加减乘除元素
-    if(!this.data.isCalc){
+    if (this.data.isResult) {
+      var data;
+      if(e.target.id === '.'){
+        data = "0" + e.target.id;
+      } else {
+        data = e.target.id;
+      }
       this.setData({
-        calcData: this.data.calcData + e.target.id
+        calcData: data,
+        isResult: false
       })
     } else {
       this.setData({
-        temporary: this.data.temporary + e.target.id
+        calcData: this.data.calcData + e.target.id
       })
     }
   },
-  //清除
+  /**
+   * [clearDigit 清除]
+   */
   clearDigit: function(){
     this.setData({
       calcData: ''
     })
   },
-  //回退
+  /**
+   * [backDigit 回退]
+   */
   backDigit: function(){
     if (!this.data.calcData.length) {
       return false;
@@ -35,20 +46,38 @@ Page({
       calcData: this.data.calcData.substring(0, this.data.calcData.length-1)
     })
   },
-  //加法
-
-  add: function(){
+  /**
+   * [operate 加减乘除]
+   * @param  {[object]} e [事件对象]
+   */
+  operate: function(e){
     //calcData.length为0，那么加，乘，除都不显示，减显示（当做负数）
-    if (!this.data.calcData.length) {
+    if (!this.data.calcData.length || this.data.calcData.substr(-1, 1) === e.target.id) {
       return false;
     }
-    //将之前的数保存为a。
-    let a = this.data.calcData;
+
     //继续拼接calcData
     this.setData({
-      calcData: this.data.calcData + "+",
-      isCalc: true
+      calcData: this.data.calcData + e.target.id,
     })
-    //将+之后输入的数据保存为b
+  },
+  /**
+   * [equal 等于]
+   */
+  equal: function(){
+    let regExp = new RegExp(/['-', '+', 'x', '÷']/, "g");
+    if (!this.data.calcData.length || this.data.calcData.substr(-1, 1).indexOf("+-x÷") > -1 || regExp.test(this.data.calcData) == -1) {
+      return false;
+    }
+    if (this.data.isResult) {
+      return false;
+    }
+    var resultData = this.data.calcData.replace(/x/g, '*');
+    var resultArray = rpn.outputRpn(resultData);
+    var result = rpn.calRpnExp(resultArray);
+    this.setData({
+      calcData: result,
+      isResult: true
+    })
   }
 });

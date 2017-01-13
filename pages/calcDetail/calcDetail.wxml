@@ -2,27 +2,27 @@
 <view class="bottom">
   <view class="group group-top">
     <view class="item item-right" bindtap="clearDigit">C</view>
-    <view class="item if if-division item-right"></view>
-    <view class="item item-right">X</view>
+    <view class="item if if-division item-right" bindtap="operate" id="÷"></view>
+    <view class="item item-right" bindtap="operate" id="x">X</view>
     <view class="item if if-back" bindtap="backDigit"></view>
   </view>
   <view class="group group-top">
     <view class="item item-right"  bindtap="clickDigit" id="7">7</view>
     <view class="item item-right" bindtap="clickDigit" id="8">8</view>
     <view class="item item-right" bindtap="clickDigit" id="9">9</view>
-    <view class="item if if-minus"></view>
+    <view class="item if if-minus" bindtap="operate" id="-"></view>
   </view>
   <view class="group group-top">
     <view class="item item-right item-bottom item-bottom" bindtap="clickDigit" id="4">4</view>
     <view class="item item-right item-bottom item-bottom" bindtap="clickDigit" id="5">5</view>
     <view class="item item-right item-bottom item-bottom" bindtap="clickDigit" id="6">6</view>
-    <view class="item" bindtap="add">+</view>
+    <view class="item" bindtap="operate" id="+">+</view>
   </view>
   <view class="group">
     <view class="item item-right item-bottom" bindtap="clickDigit" id="1">1</view>
     <view class="item item-right item-bottom" bindtap="clickDigit" id="2">2</view>
     <view class="item item-bottom" bindtap="clickDigit" id="3">3</view>
-    <view class="item equal">=</view>
+    <view class="item equal" bindtap="equal">=</view>
   </view>
   <view class="group">
     <view class="item item-bottom item-right zero" bindtap="clickDigit" id="0">0</view>

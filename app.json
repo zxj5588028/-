@@ -1,8 +1,9 @@
 {
   "pages": [
-    "pages/calcDetail/calcDetail",
+    "pages/index/index",
     "pages/calc/calc",
-    "pages/movieDetail/movieDetail"
+    "pages/movieDetail/movieDetail",
+    "pages/calcDetail/calcDetail"
   ],
   "window":{
     "navigationBarBackgroundColor": "black",
@@ -18,7 +19,7 @@
     "borderStyle": "white",
     "list": [
       {
-        "pagePath": "pages/calcDetail/calcDetail",
+        "pagePath": "pages/index/index",
         "text": "正在热映",
         "iconPath": "images/index_2.png",
         "selectedIconPath": "images/index_1.png"

@@ -4,6 +4,10 @@ Page({
     summaryText: "text-up",
     arrow: 'down'
   },
+  /**
+   * [onLoad 设置页面标题，获取电影id]
+   * @param  {[object]} query [某个电影的id和标题]
+   */
   onLoad: function(query) {
     this.setData({
       movieId: query.id,
@@ -14,6 +18,9 @@ Page({
     })
     this.requestMovies();
   },
+  /**
+   * [requestMovies 请求单个电影的数据]
+   */
   requestMovies: function(){
     let _that = this;
     let options = {
@@ -27,6 +34,9 @@ Page({
     }
     common.wxRequest(options);
   },
+  /**
+   * [buy 购买电影票]
+   */
   buy: function(){
     let options = {
       title: '啊哦，暂时还无法购买',
@@ -38,6 +48,9 @@ Page({
     }
     wx.showToast(options);
   },
+  /**
+   * [showMore 电影内容简介的显示与隐藏]
+   */
   showMore: function(){
     let arrow, summaryText;
     if (this.data.arrow === 'down') {
