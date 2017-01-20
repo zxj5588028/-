@@ -28,11 +28,13 @@
 
 <view class="main-cast bg-white">
   <view class="main-cast-title">主创</view>
-  <scroll-view scroll-x="true">
-    <view wx:for="{{movie.casts}}" wx:for-item="cast" class="inline cast">
-      <image src="{{cast.avatars.small}}" class="cast-image"></image>
-      <view class="font-12 inline cast-text">{{cast.name}}</view>
-    </view>
+  <scroll-view scroll-x="true" width="100%" class="scroll">
+    <block wx:for="{{movie.casts}}" wx:for-item="cast">
+      <view class="inline cast">
+        <image src="{{cast.avatars.small}}" class="cast-image"></image>
+        <view class="font-12  cast-text">{{cast.name}}</view>
+      </view>
+    </block>
   </scroll-view>
 </view>
 
